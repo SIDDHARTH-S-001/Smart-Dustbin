@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="smart_dustbin">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000294443024337614 -0.0161164283794353 0.163496828849898"
+        rpy="0 0 0" />
+      <mass
+        value="2.19420702500821" />
+      <inertia
+        ixx="0.0409394751953635"
+        ixy="4.61634562658022E-05"
+        ixz="-2.06070023639515E-05"
+        iyy="0.0445663195896488"
+        iyz="0.00174462676652718"
+        izz="0.0319013713894975" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smart_dustbin/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smart_dustbin/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel_left">
+    <inertial>
+      <origin
+        xyz="0.0407780404292055 -0.0660135236888704 0.0275036992627877"
+        rpy="0 0 0" />
+      <mass
+        value="0.180259649739924" />
+      <inertia
+        ixx="0.000138911386927221"
+        ixy="6.49474139159272E-07"
+        ixz="7.51308583088063E-07"
+        iyy="0.000139799813619776"
+        iyz="-3.9636723120797E-07"
+        izz="0.000270369354384751" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smart_dustbin/meshes/wheel_left.STL" />
+      </geometry>
+      <material
+        name="rubber">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smart_dustbin/meshes/wheel_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_left"
+    type="continuous">
+    <origin
+      xyz="-0.122 -0.055 0"
+      rpy="-1.5708 0.23062 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_left" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheel_right">
+    <inertial>
+      <origin
+        xyz="-0.0299865095292054 0.0716799174095804 0.0275036992627882"
+        rpy="0 0 0" />
+      <mass
+        value="0.180259649739924" />
+      <inertia
+        ixx="0.000139346860643525"
+        ixy="-7.86807329220751E-07"
+        ixz="6.03980994926991E-07"
+        iyy="0.000139364339903472"
+        iyz="5.97309406224518E-07"
+        izz="0.000270369354384751" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smart_dustbin/meshes/wheel_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://smart_dustbin/meshes/wheel_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_right"
+    type="continuous">
+    <origin
+      xyz="0.122 -0.055 0"
+      rpy="1.5708 1.179 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_right" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
