@@ -88,6 +88,27 @@
   </collision>
 </link>
 
+<link name="ydlidar_x4_1">
+  <inertial>
+    <origin xyz="-0.008294104236280672 -4.075333863429176e-08 0.03520110343257382" rpy="0 0 0"/>
+    <mass value="1.1515616542314233"/>
+    <inertia ixx="0.000489" iyy="0.000861" izz="0.000987" ixy="-0.0" iyz="0.0" ixz="-0.000148"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.032937 -0.040618 -0.336435" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wall_e_description/meshes/ydlidar_x4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.032937 -0.040618 -0.336435" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wall_e_description/meshes/ydlidar_x4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
 <joint name="left_drive" type="continuous">
   <origin xyz="0.032937 -0.094382 0.054935" rpy="0 0 0"/>
   <parent link="base_link"/>
@@ -106,6 +127,12 @@
   <origin xyz="0.032937 0.040618 0.036435" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="bin_1"/>
+</joint>
+
+<joint name="Rigid5" type="fixed">
+  <origin xyz="0.0 0.0 0.3" rpy="0 0 0"/>
+  <parent link="bin_1"/>
+  <child link="ydlidar_x4_1"/>
 </joint>
 
 </robot>
