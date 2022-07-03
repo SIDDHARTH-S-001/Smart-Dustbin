@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<robot name="wall_e" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find wall_e_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find wall_e_description)/urdf/wall_e.trans" />
+<xacro:include filename="$(find wall_e_description)/urdf/wall_e.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.032936995334038474 0.04061795924666118 0.042779283007869824" rpy="0 0 0"/>
+    <mass value="4.787456478250945"/>
+    <inertia ixx="0.027048" iyy="0.030516" izz="0.054315" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wall_e_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wall_e_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_1">
+  <inertial>
+    <origin xyz="-4.6659614505450975e-09 -0.010000040753338671 -3.879021768377067e-08" rpy="0 0 0"/>
+    <mass value="0.17676171065422966"/>
+    <inertia ixx="0.00014" iyy="0.000267" izz="0.00014" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.032937 0.094382 -0.054935" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wall_e_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="rubber_soft"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.032937 0.094382 -0.054935" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wall_e_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_1">
+  <inertial>
+    <origin xyz="-4.6659614505450975e-09 0.009999959246660972 -3.8790217787854075e-08" rpy="0 0 0"/>
+    <mass value="0.17676171065422966"/>
+    <inertia ixx="0.00014" iyy="0.000267" izz="0.00014" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.032937 -0.175618 -0.054935" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wall_e_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="rubber_soft"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.032937 -0.175618 -0.054935" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wall_e_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bin_1">
+  <inertial>
+    <origin xyz="0.022504658517767652 -0.00039207869774715576 0.17469334388419402" rpy="0 0 0"/>
+    <mass value="12.102199401060787"/>
+    <inertia ixx="0.219187" iyy="0.186064" izz="0.190176" ixy="-0.000701" iyz="-0.000516" ixz="-0.000585"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.032937 -0.040618 -0.036435" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wall_e_description/meshes/bin_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.032937 -0.040618 -0.036435" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://wall_e_description/meshes/bin_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="left_drive" type="continuous">
+  <origin xyz="0.032937 -0.094382 0.054935" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="right_drive" type="continuous">
+  <origin xyz="0.032937 0.175618 0.054935" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin xyz="0.032937 0.040618 0.036435" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bin_1"/>
+</joint>
+
+</robot>
