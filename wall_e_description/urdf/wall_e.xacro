@@ -25,7 +25,7 @@
   </collision>
 </link>
 
-<link name="right_wheel_1">
+<link name="right_wheel">
   <inertial>
     <origin xyz="-4.6659614505450975e-09 -0.010000040753338671 -3.879021768377067e-08" rpy="0 0 0"/>
     <mass value="0.17676171065422966"/>
@@ -46,7 +46,7 @@
   </collision>
 </link>
 
-<link name="left_wheel_1">
+<link name="left_wheel">
   <inertial>
     <origin xyz="-4.6659614505450975e-09 0.009999959246660972 -3.8790217787854075e-08" rpy="0 0 0"/>
     <mass value="0.17676171065422966"/>
@@ -67,7 +67,7 @@
   </collision>
 </link>
 
-<link name="bin_1">
+<link name="bin">
   <inertial>
     <origin xyz="0.022504658517767652 -0.00039207869774715576 0.17469334388419402" rpy="0 0 0"/>
     <mass value="12.102199401060787"/>
@@ -88,19 +88,19 @@
   </collision>
 </link>
 
-<link name="ydlidar_x4_1">
+<link name="ydlidar_x4">
   <inertial>
     <origin xyz="-0.008294104236280672 -4.075333863429176e-08 0.03520110343257382" rpy="0 0 0"/>
     <mass value="1.1515616542314233"/>
     <inertia ixx="0.000489" iyy="0.000861" izz="0.000987" ixy="-0.0" iyz="0.0" ixz="-0.000148"/>
   </inertial>
   <visual>
-    <origin xyz="-0.032937 -0.040618 -0.336435" rpy="0 0 0"/>
+    <origin xyz="-0.032937 -0.040618 -0.366435" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://wall_e_description/meshes/ydlidar_x4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="steel_satin"/>
-  </visual>
+  </visual> 
   <collision>
     <origin xyz="-0.032937 -0.040618 -0.336435" rpy="0 0 0"/>
     <geometry>
@@ -112,27 +112,27 @@
 <joint name="left_drive" type="continuous">
   <origin xyz="0.032937 -0.094382 0.054935" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="right_wheel_1"/>
-  <axis xyz="-0.0 -1.0 0.0"/>
+  <child link="left_wheel"/>
+  <axis xyz="-0.0 1.0 0.0"/>
 </joint>
 
 <joint name="right_drive" type="continuous">
   <origin xyz="0.032937 0.175618 0.054935" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="left_wheel_1"/>
+  <child link="right_wheel"/>
   <axis xyz="0.0 1.0 -0.0"/>
 </joint>
 
 <joint name="Rigid4" type="fixed">
   <origin xyz="0.032937 0.040618 0.036435" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="bin_1"/>
+  <child link="bin"/>
 </joint>
 
 <joint name="Rigid5" type="fixed">
-  <origin xyz="0.0 0.0 0.3" rpy="0 0 0"/>
-  <parent link="bin_1"/>
-  <child link="ydlidar_x4_1"/>
+  <origin xyz="0.0 0.0 0.33" rpy="0 0 0"/>
+  <parent link="bin"/>
+  <child link="ydlidar_x4"/>
 </joint>
 
 </robot>

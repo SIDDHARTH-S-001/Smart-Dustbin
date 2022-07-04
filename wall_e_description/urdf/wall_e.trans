@@ -4,10 +4,10 @@
 <transmission name="left_drive_tran">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="left_drive">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <hardwareInterface>EffortJointInterface</hardwareInterface>
   </joint>
   <actuator name="left_drive_actr">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <hardwareInterface>EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
@@ -15,10 +15,10 @@
 <transmission name="right_drive_tran">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="right_drive">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <hardwareInterface>EffortJointInterface</hardwareInterface>
   </joint>
   <actuator name="right_drive_actr">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <hardwareInterface>EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
