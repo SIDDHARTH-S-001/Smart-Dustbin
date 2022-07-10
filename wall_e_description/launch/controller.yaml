@@ -13,3 +13,15 @@ wall_e_controller:
     type: effort_controllers/JointPositionController
     joint: right_drive
     pid: {p: 100.0, i: 0.01, d: 10.0}
+  pan_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: pan_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  pan_left_arm_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: pan_left_arm
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  pan_right_arm_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: pan_right_arm
+    pid: {p: 100.0, i: 0.01, d: 10.0}
