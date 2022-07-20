@@ -7,7 +7,7 @@
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
   <actuator name="left_drive_actr">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <hardwareInterface>EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
@@ -18,7 +18,7 @@
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
   <actuator name="right_drive_actr">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <hardwareInterface>EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
@@ -26,32 +26,32 @@
 <transmission name="pan_joint_tran">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="pan_joint">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
   </joint>
   <actuator name="pan_joint_actr">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="pan_left_arm_tran">
+<transmission name="left_arm_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="pan_left_arm">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  <joint name="left_arm">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="pan_left_arm_actr">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  <actuator name="left_arm_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="pan_right_arm_tran">
+<transmission name="right_arm_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="pan_right_arm">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  <joint name="right_arm">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
   </joint>
-  <actuator name="pan_right_arm_actr">
-    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  <actuator name="right_arm_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>

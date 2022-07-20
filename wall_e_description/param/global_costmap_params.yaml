@@ -1,10 +1,12 @@
 global_costmap:
-  global_frame: map
+  global_frame: /map
   robot_base_frame: base_link
 
   update_frequency: 10.0
-  publish_frequency: 10.0
+  publish_frequency: 20.0 # keep it low so to reduce the computational time for larger costmaps
   transform_tolerance: 0.5
 
-  static_map: true
+  static_map: false
+#  The "static_map" parameter determines whether or not the costmap should initialize itself based on a map served by the map_server. 
+# If you aren't using an existing map or map server, set the static_map parameter to false.
  

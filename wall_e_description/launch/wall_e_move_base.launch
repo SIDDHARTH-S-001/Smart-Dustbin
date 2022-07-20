@@ -1,6 +1,6 @@
 <launch>
+
   <!-- Arguments -->
-  <arg default="$(find wall_e_description)/urdf/wall_e.xacro" name="model"/>
   <arg name="cmd_vel_topic" default="/cmd_vel" />
   <arg name="odom_topic" default="odom" />
   <arg name="move_forward_only" default="false"/>

@@ -2,16 +2,16 @@
   <!-- Arguments -->
   <arg default="$(find wall_e_description)/urdf/wall_e.xacro" name="model"/>
   <arg name="open_rviz" default="true"/>
-  <arg name="rvizconfig" default="$(find wall_e_description)/launch/urdf.rviz"/>
+  <arg name="rvizconfig" default="$(find wall_e_description)/launch/simple_map.rviz"/>
   <arg name="move_forward_only" default="false"/>
 
-  <!-- Map server -->
-  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+  <!-- Map server : <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/> -->
 
   <!-- AMCL -->
   <include file="$(find wall_e_description)/launch/wall_e_amcl.launch"/>
 
-  <include file="$(find wall_e_description)/launch/gmapping.launch"/>
+  <!-- mappinng node -->
+  <include file="$(find wall_e_description)/launch/gmapping.launch"/>  
 
   <!-- move_base -->
   <include file="$(find wall_e_description)/launch/wall_e_move_base.launch">
@@ -20,5 +20,6 @@
   </include>
 
   <!-- rviz -->
+  <node name="rviz" pkg="rviz" args="-d $(arg rvizconfig)" type="rviz" required="true"/>
 
 </launch>
